@@ -72,12 +72,13 @@ function generateResume() {
     const resumeProfileImage = document.createElement("img");
     resumeProfileImage.setAttribute(
       "src",
-      document.getElementById("image-url").value
+      "./assets/img/profile.png"
+      // document.getElementById("image-url").value
     );
-    resumeProfileImage.setAttribute(
-      "onerror",
-      "this.src='../../assets/img/profile.png'"
-    );
+    // resumeProfileImage.setAttribute(
+    //   "onerror",
+    //   "this.src='/blob/main/assets/img/profile.png'"
+    // );
     resumeProfileImage.setAttribute("alt", "profile");
     resumeProfileImage.setAttribute(
       "class",
@@ -399,7 +400,7 @@ function clearForm() {
     input.classList.remove("input-invalid");
   });
 
-  document.getElementById("image-url").value = "";
+  // document.getElementById("image-url").value = "";
 }
 
 function printResume() {
