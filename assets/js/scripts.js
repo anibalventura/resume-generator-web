@@ -405,19 +405,17 @@ function clearForm() {
 
 function printResume() {
   if (isResumeGenerated) {
-    //Get the HTML of div
+    // Get the HTML of div.
     var divElements = document.getElementById("resume-container").innerHTML;
-    //Get the HTML of whole page
-    var oldPage = document.body.innerHTML;
 
-    //Reset the page's HTML with div's HTML only
+    // Reset the page's HTML with div's HTML only.
     document.body.innerHTML = `<html><head><title></title></head><body> ${divElements} </body>`;
 
-    //Print Page
+    // Print Page.
     window.print();
 
-    //Restore original HTML
-    document.body.innerHTML = oldPage;
+    // Reload page.
+    document.location.reload(true);
   } else {
     alert("Please generate the resume first.");
   }
