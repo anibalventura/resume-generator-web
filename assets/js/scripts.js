@@ -76,7 +76,7 @@ function generateResume() {
     );
     resumeProfileImage.setAttribute(
       "onerror",
-      "this.src='../assets/img/profile.png'"
+      "this.src='../../assets/img/profile.png'"
     );
     resumeProfileImage.setAttribute("alt", "profile");
     resumeProfileImage.setAttribute(
