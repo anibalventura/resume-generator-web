@@ -70,7 +70,7 @@
                       <input
                         id="email"
                         type="text"
-                        placeholder="Ex. email.com"
+                        placeholder="Ex. johndoe@email.com"
                         class="form-control shadow-sm"
                       />
                     </div>
@@ -84,7 +84,7 @@
                       <input
                         id="web-page"
                         type="text"
-                        placeholder="Ex. www.example.com"
+                        placeholder="Ex. www.johndoe.com"
                         class="form-control shadow-sm"
                       />
                     </div>
@@ -170,11 +170,113 @@
                       Generate
                     </button>
                     <button
+                      onclick="printResume()"
+                      class="btn btn-primary shadow-sm px-4"
+                    >
+                      Print
+                    </button>
+                    <button
                       onclick="clearForm()"
                       class="btn btn-secondary shadow-sm px-4"
                     >
                       Clear
                     </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="resume-container" class="row justify-content-center m-5">
+          <div class="col-12">
+            <div class="card p-4 m-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                    <div if="profile" class="mb-4">
+                      <h2 class="mb-3">John Doe</h3>
+                      <img
+                        src="./assets/img/profile.png"
+                        alt="profile"
+                        class="img-fluid rounded-circle shadow-sm w-75"
+                      />
+                    </div>
+                    <div if="contact" class="mb-4">
+                      <h4>Contact</h4>
+                      <hr />
+                      <div>
+                        <h5>Address:</h5>
+                        <p>123 Main St</p>
+                      </div>
+                      <div>
+                        <h5>Phone:</h5>
+                        <p>123-456-7890</p>
+                      </div>
+                      <div>
+                        <h5>Email:</h5>
+                        <p>johndoe@email.com</p>
+                      </div>
+                    </div>
+                    <div id="languages">
+                      <h4>Languages</h4>
+                      <hr />
+                      <p>English</p>
+                      <p>Spanish</p>
+                      <p>French</p>
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <div id="summary" class="mb-4">
+                      <h4>Summary</h4>
+                      <hr />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ad,
+                        quia voluptates quidem aut excepturi possimus nostrum id
+                        cupiditate doloremque dignissimos labore iste sit sed, ipsum a
+                        cumque magnam est. lorem ipsum dolor sit amet consectetur Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+                        dolorum voluptate quia laborum recusandae illum vitae
+                        consequatur necessitatibus provident! Asperiores, alias harum
+                        eligendi optio ullam nostrum? Reiciendis aperiam nisi
+                        necessitatibus!
+                      </p>
+                    </div>
+                    <div id="skills" class="mb-4">
+                      <h4>Skills</h4>
+                      <hr />
+                      <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                        <li>PHP</li>
+                      </ul>
+                    </div>
+                    <div id="experience" class="mb-4">
+                      <h4>Experience</h4>
+                      <hr />
+                      <ul>
+                        <li>Software Engineer</li>
+                        <li>Web Developer</li>
+                        <li>Backend Developer</li>
+                      </ul>
+                    </div>
+                    <div id="education" class="mb-4">
+                      <h4>Education</h4>
+                      <hr />
+                      <ul>
+                        <li>University of California, Berkeley</li>
+                      </ul>
+                    </div>
+                    <div id="certifications">
+                      <h4>Certifications</h4>
+                      <hr />
+                      <ul>
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>Google Cloud</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

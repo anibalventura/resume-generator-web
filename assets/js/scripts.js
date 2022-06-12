@@ -19,6 +19,12 @@ const formInputs = [
 
 function generateResume() {
   if (validateForm()) {
+    alert("Resume generated successfully!");
+
+    /////////////////////////////////
+
+    /////////////////////////////////
+
     clearForm();
   } else {
     alert("Please fill all the required fields.");
@@ -53,13 +59,12 @@ function clearForm() {
 
 function printResume() {
   //Get the HTML of div
-  var divElements = document.getElementById("resume").innerHTML;
+  var divElements = document.getElementById("resume-container").innerHTML;
   //Get the HTML of whole page
   var oldPage = document.body.innerHTML;
 
   //Reset the page's HTML with div's HTML only
-  document.body.innerHTML =
-    "<html><head><title></title></head><body>" + divElements + "</body>";
+  document.body.innerHTML = `<html><head><title></title></head><body> ${divElements} </body>`;
 
   //Print Page
   window.print();
