@@ -72,9 +72,8 @@ function generateResume() {
     const resumeProfileImage = document.createElement("img");
     resumeProfileImage.setAttribute(
       "src",
-      document.getElementById("image-url").value
+      document.getElementById("image-url").value ?? "../img/profile.png"
     );
-    resumeProfileImage.setAttribute("onerror", "this.src='../img/profile.png'");
     resumeProfileImage.setAttribute("alt", "profile");
     resumeProfileImage.setAttribute(
       "class",
