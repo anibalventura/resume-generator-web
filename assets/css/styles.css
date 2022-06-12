@@ -3,6 +3,13 @@
   border-width: medium;
 }
 
+hr {
+  height: 3px;
+  /* border-color: ;
+  background-color: ;
+  color: ; */
+}
+
 /* Delete browser texts for printing purposes */
 @page {
   size: auto; /* auto is the initial value */
