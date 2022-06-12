@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/lib/bootstrap/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="sticky-top mb-3">
+        <ul class="nav bg-primary">
+          <li class="nav-item">
+            <a class="nav-link text-white ms-3 active" href="./index.html"
+              >Resume Generator</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container-fluid">
+      <main role="main" class="pb-3">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <div class="card-header bg-secondary text-light">
+                <h5 class="card-title">Resume Info</h5>
+                <h6 class="card-subtitle">Separate items by comma.</h6>
+              </div>
+              <div class="card-body">
+                <form id="resume-form">
+                  <div class="row form-group mb-3">
+                    <div class="col">
+                      <label for="name" class="form-label">Name: </label>
+                      <input
+                        id="name"
+                        type="text"
+                        placeholder="Ex. John Doe"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="phone" class="form-label">Phone: </label>
+                      <input
+                        id="phone"
+                        type="text"
+                        placeholder="Ex. 123-456-7890"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-3">
+                    <div class="col">
+                      <label for="address" class="form-label">Address: </label>
+                      <input
+                        id="address"
+                        type="text"
+                        placeholder="Ex. 123 Main St."
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="email" class="form-label">Email: </label>
+                      <input
+                        id="email"
+                        type="text"
+                        placeholder="Ex. email.com"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-3">
+                    <div class="col-6">
+                      <label for="web-page" class="form-label"
+                        >Web page:
+                      </label>
+                      <input
+                        id="web-page"
+                        type="text"
+                        placeholder="Ex. www.example.com"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-3">
+                    <div class="col">
+                      <label for="summary" class="form-label">Summary: </label>
+                      <textarea
+                        id="summary"
+                        type="text"
+                        placeholder="Ex. lorem ipsum dolor sit amet"
+                        class="form-control shadow-sm"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-3">
+                    <div class="col">
+                      <label for="jobs" class="form-label">Jobs: </label>
+                      <input
+                        id="jobs"
+                        type="text"
+                        placeholder="Ex. Software Engineer, Web Developer, Backend Developer, etc."
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-3">
+                    <div class="col">
+                      <label for="education" class="form-label"
+                        >Education:
+                      </label>
+                      <input
+                        id="education"
+                        type="text"
+                        placeholder="Ex. University of California, Berkeley"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="certifications" class="form-label"
+                        >Certifications:
+                      </label>
+                      <input
+                        id="certifications"
+                        type="text"
+                        placeholder="Ex. AWS, Azure, Google Cloud"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-3">
+                    <div class="col">
+                      <label for="skills" class="form-label">Skills: </label>
+                      <input
+                        id="skills"
+                        type="text"
+                        placeholder="Ex. HTML, CSS, Javascript, PHP"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="languages" class="form-label"
+                        >Languages:
+                      </label>
+                      <input
+                        id="languages"
+                        type="text"
+                        placeholder="Ex. English, Spanish, French"
+                        class="form-control shadow-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="container-fluid text-center mt-4">
+                    <button
+                      onclick="generateResume()"
+                      class="btn btn-success shadow-sm px-3"
+                    >
+                      Generate
+                    </button>
+                    <button
+                      onclick="clearForm()"
+                      class="btn btn-secondary shadow-sm px-4"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="border-top bg-white pt-3 footer text-muted">
+      <div class="container-fluid text-center">
+        <p>
+          &copy;
+          <span id="current-year"></span>
+          -
+          <a href="https://www.anibalventura.com/">Anibal Ventura</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
