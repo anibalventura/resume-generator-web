@@ -21,64 +21,6 @@ let isResumeGenerated = false;
 
 function generateResume() {
   if (validateForm()) {
-    // Get the values separated by comma from the form.
-    let jobs = document.getElementById("jobs").value.concat(",");
-    const arrayJobs = [];
-
-    for (let i = 0; 1 <= jobs.length; i++) {
-      const inJobs = jobs.indexOf(",");
-      const newJob = jobs.slice(0, inJobs);
-
-      jobs = jobs.replace(newJob + ",", "");
-      arrayJobs.push(newJob);
-    }
-
-    let education = document.getElementById("education").value.concat(",");
-    const arrayEducation = [];
-
-    for (let i = 0; 1 <= education.length; i++) {
-      const inEducation = education.indexOf(",");
-      const newEducation = education.slice(0, inEducation);
-
-      education = education.replace(newEducation + ",", "");
-      arrayEducation.push(newEducation);
-    }
-
-    let certifications = document
-      .getElementById("certifications")
-      .value.concat(",");
-    const arrayCertifications = [];
-
-    for (let i = 0; 1 <= certifications.length; i++) {
-      const inCertification = certifications.indexOf(",");
-      const newCertification = certifications.slice(0, inCertification);
-
-      certifications = certifications.replace(newCertification + ",", "");
-      arrayCertifications.push(newCertification);
-    }
-
-    let skills = document.getElementById("skills").value.concat(",");
-    const arraySkills = [];
-
-    for (let i = 0; 1 <= skills.length; i++) {
-      const inSkills = skills.indexOf(",");
-      const newSkills = skills.slice(0, inSkills);
-
-      skills = skills.replace(newSkills + ",", "");
-      arraySkills.push(newSkills);
-    }
-
-    let languages = document.getElementById("languages").value.concat(",");
-    const arrayLanguages = [];
-
-    for (let i = 0; 1 <= languages.length; i++) {
-      const inLanguages = languages.indexOf(",");
-      const newLanguages = languages.slice(0, inLanguages);
-
-      languages = languages.replace(newLanguages + ",", "");
-      arrayLanguages.push(newLanguages);
-    }
-
     ////////////////////////////////
     // Generate view of the resume.
     ////////////////////////////////
@@ -207,40 +149,29 @@ function generateResume() {
 
     const resumeLanguagesList = document.createElement("ul");
 
-    const resumeLanguageListItem1 = document.createElement("li");
-    resumeLanguageListItem1.innerHTML = arrayLanguages[0];
-
-    const resumeLanguageListItem2 = document.createElement("li");
-    resumeLanguageListItem2.innerHTML = arrayLanguages[1];
-
-    const resumeLanguageListItem3 = document.createElement("li");
-    resumeLanguageListItem3.innerHTML = arrayLanguages[2];
-
-    const resumeLanguageListItem4 = document.createElement("li");
-    resumeLanguageListItem4.innerHTML = arrayLanguages[3];
-
-    const resumeLanguageListItem5 = document.createElement("li");
-    resumeLanguageListItem5.innerHTML = arrayLanguages[4];
-
     cardCol4.appendChild(resumeLanguages);
     resumeLanguages.appendChild(resumeLanguagesTitle);
     resumeLanguages.appendChild(resumeLanguagesDivider);
     resumeLanguages.appendChild(resumeLanguagesList);
-    arrayLanguages[0] !== undefined
-      ? resumeLanguagesList.appendChild(resumeLanguageListItem1)
-      : "";
-    arrayLanguages[1] !== undefined
-      ? resumeLanguagesList.appendChild(resumeLanguageListItem2)
-      : "";
-    arrayLanguages[2] !== undefined
-      ? resumeLanguagesList.appendChild(resumeLanguageListItem3)
-      : "";
-    arrayLanguages[3] !== undefined
-      ? resumeLanguagesList.appendChild(resumeLanguageListItem4)
-      : "";
-    arrayLanguages[4] !== undefined
-      ? resumeLanguagesList.appendChild(resumeLanguageListItem5)
-      : "";
+
+    let languages = document.getElementById("languages").value.concat(",");
+    const arrayLanguages = [];
+
+    for (let i = 0; 1 <= languages.length; i++) {
+      const inLanguages = languages.indexOf(",");
+      const newLanguages = languages.slice(0, inLanguages);
+
+      languages = languages.replace(newLanguages + ",", "");
+      arrayLanguages.push(newLanguages);
+    }
+
+    arrayLanguages.forEach((language) => {
+      if (language !== undefined) {
+        const li = document.createElement("li");
+        li.innerHTML = language;
+        resumeLanguagesList.appendChild(li);
+      }
+    });
 
     ////////////////////////////////
     // Summary section.
@@ -280,40 +211,29 @@ function generateResume() {
 
     const resumeSkillsList = document.createElement("ul");
 
-    const resumeSkillsListItem1 = document.createElement("li");
-    resumeSkillsListItem1.innerHTML = arraySkills[0];
-
-    const resumeSkillsListItem2 = document.createElement("li");
-    resumeSkillsListItem2.innerHTML = arraySkills[1];
-
-    const resumeSkillsListItem3 = document.createElement("li");
-    resumeSkillsListItem3.innerHTML = arraySkills[2];
-
-    const resumeSkillsListItem4 = document.createElement("li");
-    resumeSkillsListItem4.innerHTML = arraySkills[3];
-
-    const resumeSkillsListItem5 = document.createElement("li");
-    resumeSkillsListItem5.innerHTML = arraySkills[4];
-
     cardCol8.appendChild(resumeSkills);
     resumeSkills.appendChild(resumeSkillsTitle);
     resumeSkills.appendChild(resumeSkillsDivider);
     resumeSkills.appendChild(resumeSkillsList);
-    arraySkills[0] !== undefined
-      ? resumeSkillsList.appendChild(resumeSkillsListItem1)
-      : "";
-    arraySkills[1] !== undefined
-      ? resumeSkillsList.appendChild(resumeSkillsListItem2)
-      : "";
-    arraySkills[2] !== undefined
-      ? resumeSkillsList.appendChild(resumeSkillsListItem3)
-      : "";
-    arraySkills[3] !== undefined
-      ? resumeSkillsList.appendChild(resumeSkillsListItem4)
-      : "";
-    arraySkills[4] !== undefined
-      ? resumeSkillsList.appendChild(resumeSkillsListItem5)
-      : "";
+
+    let skills = document.getElementById("skills").value.concat(",");
+    const arraySkills = [];
+
+    for (let i = 0; 1 <= skills.length; i++) {
+      const inSkills = skills.indexOf(",");
+      const newSkills = skills.slice(0, inSkills);
+
+      skills = skills.replace(newSkills + ",", "");
+      arraySkills.push(newSkills);
+    }
+
+    arraySkills.forEach((skill) => {
+      if (skill !== undefined) {
+        const li = document.createElement("li");
+        li.innerHTML = skill;
+        resumeSkillsList.appendChild(li);
+      }
+    });
 
     ////////////////////////////////
     // Experience section.
@@ -331,40 +251,29 @@ function generateResume() {
 
     const resumeExperienceList = document.createElement("ul");
 
-    const resumeExperienceListItem1 = document.createElement("li");
-    resumeExperienceListItem1.innerHTML = arrayJobs[0];
-
-    const resumeExperienceListItem2 = document.createElement("li");
-    resumeExperienceListItem2.innerHTML = arrayJobs[1];
-
-    const resumeExperienceListItem3 = document.createElement("li");
-    resumeExperienceListItem3.innerHTML = arrayJobs[2];
-
-    const resumeExperienceListItem4 = document.createElement("li");
-    resumeExperienceListItem4.innerHTML = arrayJobs[3];
-
-    const resumeExperienceListItem5 = document.createElement("li");
-    resumeExperienceListItem5.innerHTML = arrayJobs[4];
-
     cardCol8.appendChild(resumeExperience);
     resumeExperience.appendChild(resumeExperienceTitle);
     resumeExperience.appendChild(resumeExperienceDivider);
     resumeExperience.appendChild(resumeExperienceList);
-    arrayJobs[0] !== undefined
-      ? resumeExperienceList.appendChild(resumeExperienceListItem1)
-      : "";
-    arrayJobs[1] !== undefined
-      ? resumeExperienceList.appendChild(resumeExperienceListItem2)
-      : "";
-    arrayJobs[2] !== undefined
-      ? resumeExperienceList.appendChild(resumeExperienceListItem3)
-      : "";
-    arrayJobs[3] !== undefined
-      ? resumeExperienceList.appendChild(resumeExperienceListItem4)
-      : "";
-    arrayJobs[4] !== undefined
-      ? resumeExperienceList.appendChild(resumeExperienceListItem5)
-      : "";
+
+    let jobs = document.getElementById("jobs").value.concat(",");
+    const arrayJobs = [];
+
+    for (let i = 0; 1 <= jobs.length; i++) {
+      const inJobs = jobs.indexOf(",");
+      const newJob = jobs.slice(0, inJobs);
+
+      jobs = jobs.replace(newJob + ",", "");
+      arrayJobs.push(newJob);
+    }
+
+    arrayJobs.forEach((jobs) => {
+      if (jobs !== undefined) {
+        const li = document.createElement("li");
+        li.innerHTML = jobs;
+        resumeExperienceList.appendChild(li);
+      }
+    });
 
     ////////////////////////////////
     // Education section.
@@ -382,28 +291,29 @@ function generateResume() {
 
     const resumeEducationList = document.createElement("ul");
 
-    const resumeEducationListItem1 = document.createElement("li");
-    resumeEducationListItem1.innerHTML = arrayEducation[0];
-
-    const resumeEducationListItem2 = document.createElement("li");
-    resumeEducationListItem2.innerHTML = arrayEducation[1];
-
-    const resumeEducationListItem3 = document.createElement("li");
-    resumeEducationListItem3.innerHTML = arrayEducation[2];
-
     cardCol8.appendChild(resumeEducation);
     resumeEducation.appendChild(resumeEducationTitle);
     resumeEducation.appendChild(resumeEducationDivider);
     resumeEducation.appendChild(resumeEducationList);
-    arrayEducation[0] !== undefined
-      ? resumeEducationList.appendChild(resumeEducationListItem1)
-      : "";
-    arrayEducation[1] !== undefined
-      ? resumeEducationList.appendChild(resumeEducationListItem2)
-      : "";
-    arrayEducation[2] !== undefined
-      ? resumeEducationList.appendChild(resumeEducationListItem3)
-      : "";
+
+    let education = document.getElementById("education").value.concat(",");
+    const arrayEducation = [];
+
+    for (let i = 0; 1 <= education.length; i++) {
+      const inEducation = education.indexOf(",");
+      const newEducation = education.slice(0, inEducation);
+
+      education = education.replace(newEducation + ",", "");
+      arrayEducation.push(newEducation);
+    }
+
+    arrayEducation.forEach((education) => {
+      if (education !== undefined) {
+        const li = document.createElement("li");
+        li.innerHTML = education;
+        resumeEducationList.appendChild(li);
+      }
+    });
 
     ////////////////////////////////
     // Certifications section.
@@ -421,28 +331,31 @@ function generateResume() {
 
     const resumeCertificationsList = document.createElement("ul");
 
-    const resumeCertificationsListItem1 = document.createElement("li");
-    resumeCertificationsListItem1.innerHTML = arrayCertifications[0];
-
-    const resumeCertificationsListItem2 = document.createElement("li");
-    resumeCertificationsListItem2.innerHTML = arrayCertifications[1];
-
-    const resumeCertificationsListItem3 = document.createElement("li");
-    resumeCertificationsListItem3.innerHTML = arrayCertifications[2];
-
     cardCol8.appendChild(resumeCertifications);
     resumeCertifications.appendChild(resumeCertificationsTitle);
     resumeCertifications.appendChild(resumeCertificationsDivider);
     resumeCertifications.appendChild(resumeCertificationsList);
-    arrayCertifications[0] !== undefined
-      ? resumeCertificationsList.appendChild(resumeCertificationsListItem1)
-      : "";
-    arrayCertifications[1] !== undefined
-      ? resumeCertificationsList.appendChild(resumeCertificationsListItem2)
-      : "";
-    arrayCertifications[2] !== undefined
-      ? resumeCertificationsList.appendChild(resumeCertificationsListItem3)
-      : "";
+
+    let certifications = document
+      .getElementById("certifications")
+      .value.concat(",");
+    const arrayCertifications = [];
+
+    for (let i = 0; 1 <= certifications.length; i++) {
+      const inCertification = certifications.indexOf(",");
+      const newCertification = certifications.slice(0, inCertification);
+
+      certifications = certifications.replace(newCertification + ",", "");
+      arrayCertifications.push(newCertification);
+    }
+
+    arrayCertifications.forEach((certifications) => {
+      if (certifications !== undefined) {
+        const li = document.createElement("li");
+        li.innerHTML = certifications;
+        resumeCertificationsList.appendChild(li);
+      }
+    });
 
     /////////////////////////////////
 
